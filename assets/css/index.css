@@ -1,0 +1,36 @@
+/* ORA QUI INSERISCO GLI STILI "TABLET" */
+body {
+  color: #742305;
+  font-family: sans-serif;
+}
+
+#first-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 1em 0em 1em 0.5em;
+}
+
+#second-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 1em 0em 1em 0.5em;
+}
+
+@media screen and (min-width: 576px) {
+  nav {
+    border-radius: 0;
+    margin: 0;
+    padding: 2em;
+  }
+
+  article.card {
+    width: 240px;
+  }
+
+  .container {
+    display: flex;
+  }
+  article.article {
+    max-width: 100%;
+  }
+}
