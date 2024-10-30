@@ -1,36 +1,299 @@
-/* ORA QUI INSERISCO GLI STILI "TABLET" */
+* {
+  box-sizing: border-box;
+}
 body {
+  font-family: Arial, Helvetica, sans-serif;
   color: #742305;
-  font-family: sans-serif;
+  margin: 0;
 }
 
-#first-title {
-  font-size: 2.5em;
+.wrapper {
+  display: flex;
+}
+
+.h1,
+.h2 {
+  padding-left: 15px;
+  font-weight: 800;
+}
+.h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.h2 {
+  padding-left: 15px;
+  margin-top: 36px;
+  margin-bottom: 10px;
+}
+
+/* HEADER NAV BAR  */
+nav {
+  background-color: #fef7e2;
+  width: 60%;
+  min-width: 320px;
+  min-height: 160px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center; /* Allinea gli elementi verticalmente al centro. */
+  flex-wrap: wrap; /* Avvolge gli elementi su più righe se non c'è spazio sufficiente. */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+nav * {
+  margin: 10px;
+  background-color: #ffdf7e;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small {
+  flex: 1 0 100px; /* Assegna uno spazio flessibile di 1, una dimensione minima di 100px e una dimensione massima di 100px. */
+  height: 50px;
+}
+
+.big {
+  flex: 2 0 200px;
+  height: 100px;
+  display: flex;
+  padding: 20px;
+}
+
+#big {
+  flex: 2 0 120px;
   font-weight: bold;
-  margin: 1em 0em 1em 0.5em;
-}
-
-#second-title {
   font-size: 2em;
+}
+
+#logo {
+  flex: 2 0 120px;
+  height: 60px;
+}
+
+/* PRODUCT CARD  */
+.prod-card {
+  width: 15vw;
+  min-width: 250px;
+  min-height: 40vh;
+  background-color: #fef7e2;
+  border-radius: 75px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.prod-card .img-prod {
+  flex: 3 0 240px;
+  object-fit: cover;
+}
+
+.prod-card .card-content {
+  flex: 1 0 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Allinea gli elementi verticalmente al centro. */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.prod-card div {
+  width: 100%;
+}
+
+.card-content .prod-data {
+  flex: 2 0 66%;
+  display: flex;
+  align-items: center;
+}
+
+.prod-data .prod-name {
+  flex: 2 0 66%;
+  text-align: center;
+}
+
+.prod-name h2 {
+  font-weight: 800;
+  margin-top: 0;
+  line-height: 1;
+}
+
+.prod-data .prod-price {
+  flex: 1 0 33%;
+  text-align: center;
+}
+
+.card-content .button-prod {
+  flex: 1 0 33%;
+  text-align: center;
+}
+
+.button-prod button {
+  width: 60%;
+  height: 90%;
+  background-color: #ffdf7e;
+  border: none;
+  border-radius: 40px;
   font-weight: bold;
-  margin: 1em 0em 1em 0.5em;
+  color: #742305;
+}
+
+/* ARTICLE  */
+.article {
+  display: flex;
+  flex-wrap: wrap-reverse;
+
+  gap: 30px;
+
+  background-color: #fef7e2;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.article .article-content {
+  flex: 1 1 400px;
+  line-height: 1.4;
+}
+
+article img {
+  flex: 1 1 500px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.article .article-content h2 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+/* MEDIA QUERY  */
+
+/* DIV BODY  */
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .h1,
+  .h2 {
+    text-align: center;
+  }
+  /* NAV BAR  */
+  nav {
+    min-width: 320px;
+    min-height: 160px;
+    border-radius: 100px;
+    flex-wrap: wrap;
+    margin: 20px 10px 36px;
+  }
+  nav .big {
+    order: -1;
+    flex: 1 1 100%;
+  }
 }
 
 @media screen and (min-width: 576px) {
+  .h1 {
+    font-size: 44px;
+  }
+  .h2 {
+    font-size: 36px;
+  }
+  .h3 {
+    font-size: 24px;
+  }
+
+  /* NAV BAR  */
+  nav .small {
+    flex: 1 1 auto;
+  }
+  nav > * {
+    margin: 0 3px;
+  }
+
+  /* PROCUCT CARD  */
+  .prod-card {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
   nav {
-    border-radius: 0;
-    margin: 0;
-    padding: 2em;
+    flex-direction: column;
+    max-width: 300px;
+    align-items: stretch;
+    min-height: 100vh;
   }
 
-  article.card {
-    width: 240px;
+  nav .big,
+  nav .small {
+    flex-grow: 0;
   }
 
-  .container {
+  nav .big {
     display: flex;
+    padding: 20px;
+
+    order: -1;
+    flex-basis: 50px;
   }
-  article.article {
-    max-width: 100%;
+
+  #logo {
+    flex: 1 0 60px;
+  }
+
+  .big #big {
+    flex: 2 1 120px;
+    font-size: 22pt;
+  }
+
+  /* MAIN  */
+  main {
+    height: 100vh;
+    overflow: auto;
+    padding: 24px;
+  }
+
+  /* PROCUCT CARD  */
+  .prod-card {
+    flex-basis: 33.333%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .prod-card {
+    flex-basis: 25%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .prod-card {
+    flex-basis: 20%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .prod-card:last-child {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.8px) {
+  .prod-card:nth-last-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199.8px) {
+  .prod-card:last-child {
+    display: none;
   }
 }

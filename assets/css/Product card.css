@@ -1,45 +1,70 @@
-main {
-  display: flex;
-  flex-wrap: wrap;
+body {
+  padding: 90px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #742305;
 }
 
-article.card {
+.prod-card {
+  width: 15vw;
+  min-width: 250px;
+  min-height: 40vh;
+  background-color: #fef7e2;
+  border-radius: 75px;
+
   display: flex;
   flex-direction: column;
-  max-width: 280px;
-  border: 1px solid black;
-  border-radius: 30%;
-  background-color: #fbf7e3;
-  border: 0;
-  margin: 1em;
+  overflow: hidden;
 }
 
-.card .card-content {
+.prod-card .img-prod {
+  flex: 3 0 240px;
+  object-fit: cover;
+}
+
+.prod-card .card-content {
+  flex: 1 0 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Allinea gli elementi verticalmente al centro. */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.prod-card div {
+  width: 100%;
+}
+
+.card-content .prod-data {
+  flex: 2 0 66%;
+  display: flex;
+  align-items: center;
+}
+
+.prod-data .prod-name {
+  flex: 2 0 66%;
   text-align: center;
-  padding: 1em;
-  /* faccio toccare il fondo al card-content anche se la mia card è più "corta" delle altre */
-  flex-grow: 1;
-  /* a questo punto il card-content toccherà sempre il fondo! lo rendo flessibile a sua volta in modo da poter spingere il bottone alla fine della card */
-  display: flex;
-  flex-direction: column;
-  /* spingo il titolo in alto e il bottone in basso */
-  justify-content: space-between;
 }
 
-.card-content button {
-  background-color: #f3df85;
-  padding: 0.5em 0;
-  margin: 1em auto;
-  margin-bottom: 0;
-  border: 0;
-  border-radius: 15px;
-  width: 50%;
-}
-
-.card img {
-  border-radius: 30% 30% 0 0;
-}
-
-.card-content h2 {
+.prod-name h2 {
   font-weight: bold;
+}
+
+.prod-data .prod-price {
+  flex: 1 0 33%;
+  text-align: center;
+}
+
+.card-content .button-prod {
+  flex: 1 0 33%;
+  text-align: center;
+}
+
+.button-prod button {
+  width: 60%;
+  height: 90%;
+  background-color: #ffdf7e;
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  color: #742305;
 }

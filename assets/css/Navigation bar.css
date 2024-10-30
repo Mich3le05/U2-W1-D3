@@ -1,24 +1,52 @@
-nav {
-  background-color: #fbf7e3;
+body {
+  padding: 90px;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1em;
-  border-radius: 40px;
-  margin: 1em;
+  justify-content: center; /* Centra il contenuto orizzontalmente. */
+  color: #742305;
+}
+
+nav {
+  background-color: #fef7e2;
+  width: 60%;
+  min-width: 320px;
+  min-height: 160px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center; /* Allinea gli elementi verticalmente al centro. */
+  flex-wrap: wrap; /* Avvolge gli elementi su più righe se non c'è spazio sufficiente. */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+nav * {
+  margin: 10px;
+  background-color: #ffdf7e;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small {
+  flex: 1 0 100px; /* Assegna uno spazio flessibile di 1, una dimensione minima di 100px e una dimensione massima di 100px. */
+  height: 50px;
+}
+
+.big {
+  flex: 2 0 200px;
+  height: 100px;
+  display: flex;
+  padding: 20px;
+}
+
+#big {
+  flex: 2 0 120px;
+  font-weight: bold;
+  font-size: 2em;
 }
 
 #logo {
-  width: 20px;
-  margin-right: 0.5em;
-}
-
-nav button {
-  background-color: #f3df85;
-  padding: 0.5em 0;
-  margin: 0.5em;
-  margin-bottom: 0;
-  border: 0;
-  border-radius: 20px;
-  width: 50%;
+  flex: 2 0 120px;
+  height: 60px;
 }
